@@ -16,6 +16,8 @@ public class spiderController : MonoBehaviour
     float movement = 0f;
 
     bool onWall = false;
+    bool onWall2 = false;
+ 
 
     public GameObject characterSelectionManager;
     // Start is called before the first frame update
@@ -27,9 +29,11 @@ public class spiderController : MonoBehaviour
     private void FixedUpdate()
     {
         if (characterSelectionManager.GetComponent<characterSelectionManager>().spiderSelected)
-            if(!onWall)
+            if(!onWall && !onWall2)
             {
-                
+                spiderBody.constraints = RigidbodyConstraints2D.None;
+                spiderBody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation; ;
+
                 movement = Input.GetAxisRaw("Horizontal");
                 spiderBody.velocity = new Vector2(movement * spiderSpeed, spiderBody.velocity.y);
                 spiderAnimator.SetFloat("spiderVelocity", Mathf.Abs(movement));
@@ -37,11 +41,27 @@ public class spiderController : MonoBehaviour
             }
             else if (onWall)
             {
-                movement = Input.GetAxisRaw("Vertical");
+                spiderBody.constraints = RigidbodyConstraints2D.None;
+              spiderBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+                
+              
+                movement = Input.GetAxisRaw("Horizontal");
                 spiderBody.velocity = new Vector2(spiderBody.velocity.x, movement * spiderSpeed);
                 spiderAnimator.SetFloat("spiderVelocity", Mathf.Abs(movement));
                 flip();
             }
+        if (onWall2)
+        {
+            spiderBody.constraints = RigidbodyConstraints2D.None;
+            spiderBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
+
+            movement = Input.GetAxisRaw("Horizontal");
+            spiderBody.velocity = new Vector2(spiderBody.velocity.x, -movement * spiderSpeed);
+            spiderAnimator.SetFloat("spiderVelocity", Mathf.Abs(movement));
+            flip();
+        }
+
 
     }
 
@@ -49,13 +69,13 @@ public class spiderController : MonoBehaviour
     {
         if (!spiderSprite.flipX && movement < 0)
         {
-            Debug.Log("flip true");
+            
             spiderSprite.flipX = true;
         }
         else
        if (spiderSprite.flipX && movement > 0)
         {
-            Debug.Log("flip false");
+          
             spiderSprite.flipX = false;
         }
     }
@@ -69,16 +89,41 @@ public class spiderController : MonoBehaviour
             spiderBody.gravityScale = 0;
             gameObject.transform.rotation = Quaternion.Euler(0, 0, tiltAroundZ);
         }
+        if(collision.gameObject.tag == "leftWall")
+        {
+            tiltAroundZ = Input.GetAxis("Horizontal") * 90;
+            onWall2 = true;
+            spiderBody.gravityScale = 0;
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, tiltAroundZ);
+        }
+        if (collision.gameObject.tag == "floor")
+        {
+            Debug.Log("touching floor");
+            tiltAroundZ = Input.GetAxis("Horizontal") * 0;
+            spiderBody.gravityScale = 1;
+            onWall = false;
+            onWall2 = false;
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, tiltAroundZ);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        float tiltAroundZ = Input.GetAxis("Horizontal") * -90;
+        float tiltAroundZ = Input.GetAxis("Horizontal") * 0;
         if (collision.gameObject.tag == "rightWall")
         {
             spiderBody.gravityScale = 1;
             onWall = false;
             gameObject.transform.rotation = Quaternion.Euler(0, 0, tiltAroundZ);
         }
+        if (collision.gameObject.tag == "leftWall")
+        {
+            spiderBody.gravityScale = 1;
+            onWall2 = false;
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, tiltAroundZ);
+        }
+      
     }
+
+    
 }

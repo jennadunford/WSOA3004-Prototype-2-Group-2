@@ -6,6 +6,9 @@ TagManager:
   tags:
   - manager
   - rightWall
+  - floor
+  - leftWall
+  - roof
   layers:
   - Default
   - TransparentFX

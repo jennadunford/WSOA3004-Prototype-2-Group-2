@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7231172784916483113}
   - component: {fileID: 1939916450443659576}
   - component: {fileID: 5585762248882821207}
-  - component: {fileID: 4441924550332816005}
+  - component: {fileID: 4839617816205305246}
   m_Layer: 6
   m_Name: spider
   m_TagString: Untagged
@@ -122,10 +122,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9245385a0b0eaaf40a1855e7a9a9154e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5585762248882821207
 MonoBehaviour:
@@ -144,8 +144,8 @@ MonoBehaviour:
   spiderBody: {fileID: 1939916450443659576}
   spiderAnimator: {fileID: 7231172784916483113}
   characterSelectionManager: {fileID: 0}
---- !u!70 &4441924550332816005
-CapsuleCollider2D:
+--- !u!58 &4839617816205305246
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -157,6 +157,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.024721533, y: -0.019018}
-  m_Size: {x: 0.4943508, y: 0.3003758}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
