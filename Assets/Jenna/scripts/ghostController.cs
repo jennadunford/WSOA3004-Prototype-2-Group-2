@@ -12,20 +12,26 @@ public class ghostController : MonoBehaviour
 
     public Rigidbody2D ghostBody;
 
+    public GameObject characterSelectionManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        characterSelectionManager = GameObject.FindGameObjectWithTag("manager");
     }
 
     // Update is called once per frame
     void Update()
     {
-        direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (characterSelectionManager.GetComponent<characterSelectionManager>().ghostSelected)
+        {
+            direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        ghostBody.velocity = direction * floatSpeed;
-        flip();
+            ghostBody.velocity = direction * floatSpeed;
+            flip();
+
+        }
 
     }
 

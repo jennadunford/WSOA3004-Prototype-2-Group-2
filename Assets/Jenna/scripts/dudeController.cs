@@ -8,37 +8,47 @@ public class dudeController : MonoBehaviour
 
     public SpriteRenderer dudeSprite;
 
-    Vector2 direction;
 
     public Rigidbody2D dudeBody;
+
+    public Animator dudeAnimator;
+
+     float movement = 0f;
+
+    public GameObject characterSelectionManager;
 
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        characterSelectionManager = GameObject.FindGameObjectWithTag("manager");
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        direction = transform.localPosition;
-        flip();
-        direction.x += Input.GetAxis("Horizontal") * Time.deltaTime * walkSpeed;
-        transform.localPosition = direction;
-       
 
+
+    private void FixedUpdate()
+    {
+        if (characterSelectionManager.GetComponent<characterSelectionManager>().dudeSelected)
+        {
+            movement = Input.GetAxisRaw("Horizontal");
+
+            dudeBody.velocity = new Vector2(movement * walkSpeed, dudeBody.velocity.y);
+            dudeAnimator.SetFloat("dudeVelocity", Mathf.Abs(movement));
+            flip();
+        }
+            
     }
 
     void flip()
     {
-        if (!dudeSprite.flipX && direction.x < 0)
+        if (!dudeSprite.flipX && movement < 0)
         {
             Debug.Log("flip true");
             dudeSprite.flipX = true;
         }
         else
-       if (dudeSprite.flipX && direction.x > 0)
+       if (dudeSprite.flipX && movement> 0)
         {
             Debug.Log("flip false");
             dudeSprite.flipX = false;
