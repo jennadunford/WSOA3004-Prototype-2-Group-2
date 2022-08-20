@@ -15,6 +15,8 @@ public class spiderController : MonoBehaviour
 
     float movement = 0f;
 
+    bool onWall = false;
+
     public GameObject characterSelectionManager;
     // Start is called before the first frame update
     void Start()
@@ -25,13 +27,21 @@ public class spiderController : MonoBehaviour
     private void FixedUpdate()
     {
         if (characterSelectionManager.GetComponent<characterSelectionManager>().spiderSelected)
-        {
-            movement = Input.GetAxisRaw("Horizontal");
-
-            spiderBody.velocity = new Vector2(movement * spiderSpeed, spiderBody.velocity.y);
-            spiderAnimator.SetFloat("spiderVelocity", Mathf.Abs(movement));
-            flip();
-        }
+            if(!onWall)
+            {
+                
+                movement = Input.GetAxisRaw("Horizontal");
+                spiderBody.velocity = new Vector2(movement * spiderSpeed, spiderBody.velocity.y);
+                spiderAnimator.SetFloat("spiderVelocity", Mathf.Abs(movement));
+                flip();
+            }
+            else if (onWall)
+            {
+                movement = Input.GetAxisRaw("Vertical");
+                spiderBody.velocity = new Vector2(spiderBody.velocity.x, movement * spiderSpeed);
+                spiderAnimator.SetFloat("spiderVelocity", Mathf.Abs(movement));
+                flip();
+            }
 
     }
 
@@ -47,6 +57,28 @@ public class spiderController : MonoBehaviour
         {
             Debug.Log("flip false");
             spiderSprite.flipX = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        float tiltAroundZ = Input.GetAxis("Horizontal") * 90;
+        if (collision.gameObject.tag == "rightWall")
+        {
+            onWall = true;
+            spiderBody.gravityScale = 0;
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, tiltAroundZ);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        float tiltAroundZ = Input.GetAxis("Horizontal") * -90;
+        if (collision.gameObject.tag == "rightWall")
+        {
+            spiderBody.gravityScale = 1;
+            onWall = false;
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, tiltAroundZ);
         }
     }
 }
