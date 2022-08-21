@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class dogController : MonoBehaviour
 {
+    public GameObject hoverLight;
+
     public float dogSpeed;
 
     public SpriteRenderer dogSprite;
@@ -48,5 +50,15 @@ public class dogController : MonoBehaviour
             Debug.Log("flip false");
             dogSprite.flipX = false;
         }
+    }
+
+    void OnMouseOver()
+    {
+        hoverLight.gameObject.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        hoverLight.gameObject.SetActive(false);
     }
 }

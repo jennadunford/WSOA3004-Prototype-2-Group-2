@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ghostController : MonoBehaviour
 {
+    public GameObject hoverLight;
     public float floatSpeed;
 
     public SpriteRenderer ghostSprite;
@@ -50,4 +51,13 @@ public class ghostController : MonoBehaviour
         }
     }
 
+    void OnMouseOver()
+    {
+        hoverLight.gameObject.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        hoverLight.gameObject.SetActive(false);
+    }
 }

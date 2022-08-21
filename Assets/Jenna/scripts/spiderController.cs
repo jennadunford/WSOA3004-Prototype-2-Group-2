@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class spiderController : MonoBehaviour
 {
+    public GameObject hoverLight;
     public float spiderSpeed;
 
     public SpriteRenderer spiderSprite;
@@ -124,6 +125,14 @@ public class spiderController : MonoBehaviour
         }
       
     }
+    void OnMouseOver()
+    {
+        hoverLight.gameObject.SetActive(true);
+    }
 
-    
+    private void OnMouseExit()
+    {
+        hoverLight.gameObject.SetActive(false);
+    }
+
 }

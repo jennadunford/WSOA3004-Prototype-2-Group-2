@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class dudeController : MonoBehaviour
 {
+    public GameObject hoverLight;
     public float walkSpeed;
 
     public SpriteRenderer dudeSprite;
@@ -53,5 +54,15 @@ public class dudeController : MonoBehaviour
             Debug.Log("flip false");
             dudeSprite.flipX = false;
         }
+    }
+
+    void OnMouseOver()
+    {
+        hoverLight.gameObject.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        hoverLight.gameObject.SetActive(false);
     }
 }
