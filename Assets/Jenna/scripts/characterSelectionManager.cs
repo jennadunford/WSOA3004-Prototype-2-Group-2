@@ -11,6 +11,8 @@ public class characterSelectionManager : MonoBehaviour
     public bool ghostSelected = true;
 
     public Text selectedCharacter;
+
+    public int chosenCharacter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +67,7 @@ public class characterSelectionManager : MonoBehaviour
         spiderSelected  = false;
         dudeSelected    = false;
         ghostSelected   = false;
+        chosenCharacter = 2;
 }
 
     public void selectSpider()
@@ -73,6 +76,7 @@ public class characterSelectionManager : MonoBehaviour
         spiderSelected  = true;
         dudeSelected    = false;
         ghostSelected   = false;
+        chosenCharacter = 3;
     }
 
     public void selectDude()
@@ -81,6 +85,7 @@ public class characterSelectionManager : MonoBehaviour
         spiderSelected  = false;
         dudeSelected    = true;
         ghostSelected   = false;
+        chosenCharacter = 1;
     }
 
     public void selectGhost()
@@ -89,6 +94,7 @@ public class characterSelectionManager : MonoBehaviour
         spiderSelected  = false;
         dudeSelected    = false;
         ghostSelected   = true;
+        chosenCharacter = 0;
     }
 
 

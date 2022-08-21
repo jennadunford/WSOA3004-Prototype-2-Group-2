@@ -5,6 +5,8 @@ using UnityEngine;
 public class cameraFollow : MonoBehaviour
 {
     public GameObject player;
+    public GameObject[] players;
+    public GameObject manager;
 
     public float timeOffset;
     public Vector2 posOffset;
@@ -20,6 +22,8 @@ public class cameraFollow : MonoBehaviour
 
     [SerializeField]
     float right;
+
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,8 @@ public class cameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = players[manager.gameObject.GetComponent<characterSelectionManager>().chosenCharacter];
+        
 
         Vector3 start = transform.position;
         Vector3 end = player.transform.position;
