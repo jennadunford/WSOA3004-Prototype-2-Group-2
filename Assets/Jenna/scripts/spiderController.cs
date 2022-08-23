@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class spiderController : MonoBehaviour
 {
+
+    bool onSwitch1 = false;
     public GameObject hoverLight;
     public float spiderSpeed;
 
@@ -29,6 +31,12 @@ public class spiderController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        if(onSwitch1 && Input.GetKey(KeyCode.Return))
+        {
+            characterSelectionManager.GetComponent<gamemanager>().liftChains(characterSelectionManager.GetComponent<gamemanager>().chains1);
+            Debug.Log("Spider pressed switch 1 - chain 1 lifted up");
+        }
         if (characterSelectionManager.GetComponent<characterSelectionManager>().spiderSelected)
             if(!onWall && !onWall2)
             {
@@ -133,6 +141,26 @@ public class spiderController : MonoBehaviour
     private void OnMouseExit()
     {
         hoverLight.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "switch1":
+                onSwitch1 = true;
+                break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "switch1":
+                onSwitch1 = false;
+                break;
+        }
     }
 
 }

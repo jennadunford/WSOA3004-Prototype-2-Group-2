@@ -33,6 +33,11 @@ public class dogController : MonoBehaviour
             dogBody.velocity = new Vector2(movement * dogSpeed, dogBody.velocity.y);
             dogAnimator.SetFloat("dogVelocity", Mathf.Abs(movement));
             flip();
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                dogAnimator.SetTrigger("bark");
+            }
         }
         
     }

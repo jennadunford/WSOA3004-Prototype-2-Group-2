@@ -9,6 +9,8 @@ TagManager:
   - floor
   - leftWall
   - roof
+  - switch1A
+  - switch1
   layers:
   - Default
   - TransparentFX
