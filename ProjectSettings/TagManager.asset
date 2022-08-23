@@ -11,6 +11,7 @@ TagManager:
   - roof
   - switch1A
   - switch1
+  - bark
   layers:
   - Default
   - TransparentFX

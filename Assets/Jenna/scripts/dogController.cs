@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class dogController : MonoBehaviour
 {
+
+    public Transform barkPoint;
+    public GameObject barkParticles;
     public GameObject hoverLight;
 
     public float dogSpeed;
@@ -37,6 +40,8 @@ public class dogController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 dogAnimator.SetTrigger("bark");
+                Instantiate(barkParticles, barkPoint);
+                
             }
         }
         
