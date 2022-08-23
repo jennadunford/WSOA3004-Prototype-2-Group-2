@@ -37,11 +37,13 @@ public class dogController : MonoBehaviour
             dogAnimator.SetFloat("dogVelocity", Mathf.Abs(movement));
             flip();
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKey(KeyCode.Return))
             {
                 dogAnimator.SetTrigger("bark");
-                Instantiate(barkParticles, barkPoint);
+                Instantiate(barkParticles, barkPoint.position,Quaternion.identity);
                 
+                //dogAnimator.SetTrigger("endBark");
+
             }
         }
         
