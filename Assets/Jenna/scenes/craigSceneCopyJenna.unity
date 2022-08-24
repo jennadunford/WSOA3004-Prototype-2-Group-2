@@ -56138,17 +56138,89 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7064975296342886104, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296342886104, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_PressedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296342886104, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296342886104, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296342886104, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296424075116, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296424075116, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_PressedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296424075116, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296424075116, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296424075116, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7064975296599072532, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
       propertyPath: m_SizeDelta.y
       value: 143.5354
       objectReference: {fileID: 0}
     - target: {fileID: 7064975296599072532, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100
+      value: 105.4
       objectReference: {fileID: 0}
     - target: {fileID: 7064975296599072532, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 71.76773
+      value: 92.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296630726478, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296630726478, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_PressedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296630726478, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296630726478, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296630726478, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296907540797, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296907540798, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 22.0044
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296907540798, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.7609
       objectReference: {fileID: 0}
     - target: {fileID: 7064975297599279415, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
       propertyPath: m_Camera
@@ -56246,10 +56318,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 7064975297599279435, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+=======
+    - target: {fileID: 7064975297742712662, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975297742712663, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 21.7678
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975297742712663, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 37.87979
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975297842293357, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975297842293358, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 21.7986
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975297842293358, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.41788
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975297842293358, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -39.411808
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
 --- !u!1 &2117607997
