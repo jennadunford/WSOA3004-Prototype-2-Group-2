@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PopUps : MonoBehaviour
 {
@@ -61,15 +62,17 @@ public class PopUps : MonoBehaviour
             {
                 humanInfo.SetActive(false);
             }
-
-            if (dogInfo.activeInHierarchy)
+            else if (dogInfo.activeInHierarchy)
             {
                 dogInfo.SetActive(false);
             }
-
-            if (spiderInfo.activeInHierarchy)
+            else if (spiderInfo.activeInHierarchy)
             {
                 spiderInfo.SetActive(false);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             }
         }
     }
