@@ -13,6 +13,7 @@ TagManager:
   - switch1
   - bark
   - evilGhost
+  - door
   layers:
   - Default
   - TransparentFX

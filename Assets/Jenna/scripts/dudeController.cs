@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class dudeController : MonoBehaviour
 {
+
+    public GameObject doorOpen;
+    public GameObject doorClosed;
     public GameObject hoverLight;
     public float walkSpeed;
 
@@ -64,5 +67,16 @@ public class dudeController : MonoBehaviour
     private void OnMouseExit()
     {
         hoverLight.gameObject.SetActive(false);
+    }
+
+    public void openDoor()
+    {
+        doorOpen.SetActive(true);
+        doorClosed.SetActive(false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "door") openDoor();
     }
 }
