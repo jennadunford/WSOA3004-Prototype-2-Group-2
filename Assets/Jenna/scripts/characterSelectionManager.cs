@@ -34,26 +34,26 @@ public class characterSelectionManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             switch (hit.collider.gameObject.name)
             {
                 case "dog":
                     selectDog();
-                    Debug.Log("Dog is selected");
+                    //Debug.Log("Dog is selected");
                     selectedCharacter.text = "Selected: Dog";
                     break;
                 case "dude":
                     selectDude();
-                    Debug.Log("Dude is selected");
+                    //Debug.Log("Dude is selected");
                     selectedCharacter.text = "Selected: Dude";
                     break;
                 case "ghost":
                     selectGhost();
-                    Debug.Log("Ghost is selected");
+                    //Debug.Log("Ghost is selected");
                     selectedCharacter.text = "Selected: Ghost";
                     break;
                 case "spider":
-                    Debug.Log("spider is selected");
+                   // Debug.Log("spider is selected");
                     selectedCharacter.text = "Selected: Spider";
                     selectSpider();
                     break;

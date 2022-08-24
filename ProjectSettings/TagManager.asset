@@ -12,6 +12,7 @@ TagManager:
   - switch1A
   - switch1
   - bark
+  - evilGhost
   layers:
   - Default
   - TransparentFX

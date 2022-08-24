@@ -45,13 +45,13 @@ public class dudeController : MonoBehaviour
     {
         if (!dudeSprite.flipX && movement < 0)
         {
-            Debug.Log("flip true");
+            //Debug.Log("flip true");
             dudeSprite.flipX = true;
         }
         else
        if (dudeSprite.flipX && movement> 0)
         {
-            Debug.Log("flip false");
+            //Debug.Log("flip false");
             dudeSprite.flipX = false;
         }
     }

@@ -759,9 +759,11 @@ GameObject:
   - component: {fileID: 35945122}
   - component: {fileID: 35945121}
   - component: {fileID: 35945120}
+  - component: {fileID: 35945123}
+  - component: {fileID: 35945124}
   m_Layer: 0
   m_Name: evilGhost
-  m_TagString: Untagged
+  m_TagString: evilGhost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,6 +853,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &35945123
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35945119}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02551563, y: 0.48990285}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.657416, y: 2.2598054}
+  m_EdgeRadius: 0
+--- !u!114 &35945124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35945119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a9466d40ee6d1409e954156cac31a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &45962035
 GameObject:
   m_ObjectHideFlags: 0
@@ -26975,6 +27015,14 @@ PrefabInstance:
       propertyPath: hoverLight
       value: 
       objectReference: {fileID: 309544668}
+    - target: {fileID: 5585762248882821207, guid: 05f6a2f63a78ac24a8b8f26c3b0e6e25, type: 3}
+      propertyPath: lightSwitch
+      value: 
+      objectReference: {fileID: 753348498}
+    - target: {fileID: 5585762248882821207, guid: 05f6a2f63a78ac24a8b8f26c3b0e6e25, type: 3}
+      propertyPath: spiderSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5585762248882821207, guid: 05f6a2f63a78ac24a8b8f26c3b0e6e25, type: 3}
       propertyPath: characterSelectionManager
       value: 
@@ -55742,6 +55790,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7064975296599072532, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 143.5354
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296599072532, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064975296599072532, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 71.76773
+      objectReference: {fileID: 0}
     - target: {fileID: 7064975297599279415, guid: 15838f9434b082b4fac6136e86ad5942, type: 3}
       propertyPath: m_Camera
       value: 

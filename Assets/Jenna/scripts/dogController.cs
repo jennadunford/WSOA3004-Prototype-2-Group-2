@@ -53,13 +53,13 @@ public class dogController : MonoBehaviour
     {
         if (!dogSprite.flipX && movement < 0)
         {
-            Debug.Log("flip true");
+            //Debug.Log("flip true");
             dogSprite.flipX = true;
         }
         else
        if (dogSprite.flipX && movement > 0)
         {
-            Debug.Log("flip false");
+            //Debug.Log("flip false");
             dogSprite.flipX = false;
         }
     }

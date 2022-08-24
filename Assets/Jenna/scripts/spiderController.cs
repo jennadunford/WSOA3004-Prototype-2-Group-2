@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class spiderController : MonoBehaviour
 {
-
+    public SpriteRenderer lightSwitch;
     bool onSwitch1 = false;
     public GameObject hoverLight;
     public float spiderSpeed;
@@ -32,9 +32,10 @@ public class spiderController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if(onSwitch1 && Input.GetKey(KeyCode.Return))
+        if(onSwitch1 && Input.GetKeyDown(KeyCode.Return))
         {
             characterSelectionManager.GetComponent<gamemanager>().liftChains(characterSelectionManager.GetComponent<gamemanager>().chains1);
+            lightSwitch.flipY = !lightSwitch.flipY;
             Debug.Log("Spider pressed switch 1 - chain 1 lifted up");
         }
         if (characterSelectionManager.GetComponent<characterSelectionManager>().spiderSelected)
@@ -159,6 +160,7 @@ public class spiderController : MonoBehaviour
         {
             case "switch1":
                 onSwitch1 = false;
+              
                 break;
         }
     }
