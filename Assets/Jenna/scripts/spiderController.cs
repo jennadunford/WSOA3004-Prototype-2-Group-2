@@ -20,6 +20,8 @@ public class spiderController : MonoBehaviour
 
     bool onWall = false;
     bool onWall2 = false;
+
+    public bool spiderSafe = false;
  
 
     public GameObject characterSelectionManager;
@@ -32,7 +34,7 @@ public class spiderController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if(onSwitch1 && Input.GetKeyDown(KeyCode.Return))
+        if(onSwitch1 && Input.GetKey(KeyCode.Return))
         {
             characterSelectionManager.GetComponent<gamemanager>().liftChains(characterSelectionManager.GetComponent<gamemanager>().chains1);
             lightSwitch.flipY = !lightSwitch.flipY;
@@ -134,6 +136,11 @@ public class spiderController : MonoBehaviour
         }
       
     }
+
+
+
+
+   
     void OnMouseOver()
     {
         hoverLight.gameObject.SetActive(true);
@@ -151,6 +158,9 @@ public class spiderController : MonoBehaviour
             case "switch1":
                 onSwitch1 = true;
                 break;
+            case "fire":
+               spiderSafe = true;
+                break;
         }
     }
 
@@ -160,8 +170,12 @@ public class spiderController : MonoBehaviour
         {
             case "switch1":
                 onSwitch1 = false;
-              
                 break;
+            case "fire":
+                spiderSafe = false;
+                break;
+              
+          
         }
     }
 

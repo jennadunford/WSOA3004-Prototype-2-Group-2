@@ -21,6 +21,8 @@ public class dogController : MonoBehaviour
     float movement = 0f;
 
     public GameObject characterSelectionManager;
+
+    public bool dogSafe = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,5 +74,29 @@ public class dogController : MonoBehaviour
     private void OnMouseExit()
     {
         hoverLight.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+
+            case "fire":
+                dogSafe = true;
+                break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+
+            case "fire":
+                dogSafe = false;
+                break;
+
+
+        }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ghostController : MonoBehaviour
 {
+    public GameObject cameraObject;
     public GameObject hoverLight;
     public float floatSpeed;
 
@@ -14,6 +15,8 @@ public class ghostController : MonoBehaviour
     public Rigidbody2D ghostBody;
 
     public GameObject characterSelectionManager;
+
+    public bool ghostSafe = false;
 
 
     // Start is called before the first frame update
@@ -32,6 +35,10 @@ public class ghostController : MonoBehaviour
             ghostBody.velocity = direction * floatSpeed;
             flip();
 
+        }
+        else
+        {
+            ghostBody.transform.position = new Vector3(cameraObject.GetComponent<cameraFollow>().players[characterSelectionManager.GetComponent<characterSelectionManager>().chosenCharacter].transform.position.x - 1, cameraObject.GetComponent<cameraFollow>().players[characterSelectionManager.GetComponent<characterSelectionManager>().chosenCharacter].transform.position.y + 1.3f,0);
         }
 
     }
@@ -59,5 +66,29 @@ public class ghostController : MonoBehaviour
     private void OnMouseExit()
     {
         hoverLight.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+
+            case "fire":
+                ghostSafe = true;
+                break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+
+            case "fire":
+                ghostSafe = false;
+                break;
+
+
+        }
     }
 }

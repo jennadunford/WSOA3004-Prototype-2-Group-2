@@ -21,6 +21,8 @@ public class dudeController : MonoBehaviour
 
     public GameObject characterSelectionManager;
 
+    public bool dudeSafe = false;
+
     
     // Start is called before the first frame update
     void Start()
@@ -78,5 +80,29 @@ public class dudeController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "door") openDoor();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+
+            case "fire":
+                dudeSafe = true;
+                break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+
+            case "fire":
+                dudeSafe = false;
+                break;
+
+
+        }
     }
 }
